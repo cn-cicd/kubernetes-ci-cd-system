@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-env-variables
+  namespace: ci-cd
+data:
+  # Environment Variables for Jenkins Deployment
+  VARIABLE_NAME: "variable_value"

@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    component: jenkins
+  name: jenkins
+  namespace: ci-cd
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        component: jenkins
+    spec:
+      volumes:
+        - name: jenkins-pv-storage
+          persistentVolumeClaim:
+            claimName: jenkins-pv-claim
+      containers:
+        - name: jenkins
+          image: jnonino/jenkins-master
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 8080
+            - name: slaves
+              containerPort: 50000  
+          envFrom:
+            - configMapRef:
+                name: jenkins-env-variables
+          volumeMounts:
+            - name: jenkins-pv-storage
+              mountPath: "/var/jenkins_home"
