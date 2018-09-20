@@ -1,10 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  labels:
-    component: jenkins
   name: jenkins
   namespace: ci-cd
+  labels:
+    component: jenkins
 spec:
   replicas: 1
   strategy:

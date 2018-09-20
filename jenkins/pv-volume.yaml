@@ -3,7 +3,8 @@ kind: PersistentVolume
 metadata:
   name: jenkins-pv-volume
   labels:
-    type: local
+    component: jenkins
+    type: local    
 spec:
   storageClassName: manual
   accessModes:

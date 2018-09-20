@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: jenkins-env-variables
   namespace: ci-cd
+  labels:
+    component: jenkins
 data:
   # Environment Variables for Jenkins Deployment
   VARIABLE_NAME: "variable_value"
