@@ -13,6 +13,12 @@ Install kubectl to control the Kubernetes cluster, follow instructions here:
     https://kubernetes.io/docs/tasks/tools/install-kubectl/
     https://kubernetes.io/docs/reference/kubectl/overview/
 
+## Start Minikube cluster ##
+
+Run command to start minikube cluster on a VM using 2 CPUs and 8 Gb of RAM.
+
+    minikube start --cpus 2 --memory 8192
+
 ## Kubernetes Namespace ##
 
 Create a Kubernetes namespace where all Kubernetes resources will be located.
