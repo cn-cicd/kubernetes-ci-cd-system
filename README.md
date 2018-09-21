@@ -25,11 +25,14 @@ Jenkins is an open source automation server written in Java. Jenkins helps to au
 
 To deploy Jenkins run these commands:
 
-    kubectl create -f jenkins/environment-variables.yaml
-    kubectl create -f jenkins/service.yaml
-    kubectl create -f jenkins/pv-volume.yaml  
-    kubectl create -f jenkins/pv-claim.yaml
-    kubectl create -f jenkins/deployment.yaml
+    mkdir -p /tmp/jenkins-pv-volume
+    chmod 777 /tmp/jenkins-pv-volume
+    minikube mount /tmp/jenkins-pv-volume:/data/jenkins-pv-volume
+    kubectl create -f jenkins/
+
+Start Jenkins UI:
+
+    minikube service jenkins -n ci-cd
 
 ## SonarQube ##
 
@@ -37,22 +40,16 @@ SonarQube is an open source platform developed by SonarSource for continuous ins
 
 To deploy Sonarqube run these commands:
 
-    kubectl create -f sonarqube/environment-variables.yaml
-    kubectl create -f sonarqube/service.yaml
-    kubectl create -f sonarqube/deployment.yaml
+    kubectl create -f sonarqube/
 
 ## Artifactory ##
 
 To deploy Artifactory run these commands:
 
-    kubectl create -f artifactory/environment-variables.yaml
-    kubectl create -f artifactory/service.yaml
-    kubectl create -f artifactory/deployment.yaml
+    kubectl create -f artifactory/
 
 ## Nexus ##
 
 To deploy Nexus run these commands:
 
-    kubectl create -f nexus/environment-variables.yaml
-    kubectl create -f nexus/service.yaml
-    kubectl create -f nexus/deployment.yaml
+    kubectl create -f nexus/

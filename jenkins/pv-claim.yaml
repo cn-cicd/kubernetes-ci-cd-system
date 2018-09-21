@@ -6,9 +6,9 @@ metadata:
   labels:
     component: jenkins
 spec:
-  storageClassName: manual
+  storageClassName: ""
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 3Gi

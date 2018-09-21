@@ -21,7 +21,7 @@ spec:
       containers:
         - name: jenkins
           image: jnonino/jenkins-master
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - name: web
               containerPort: 8080

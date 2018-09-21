@@ -4,12 +4,10 @@ metadata:
   name: jenkins-pv-volume
   labels:
     component: jenkins
-    type: local    
 spec:
-  storageClassName: manual
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   capacity:
-    storage: 10Gi
+    storage: 5Gi
   hostPath:
-    path: /data/jenkins-pv-volume/
+    path: /data/jenkins-pv-volume
