@@ -2,4 +2,4 @@
 
 Test Continuous Integration/Delivery environment.
 
-[Deploy on Kubernetes](kubernetes/README.md)
+[Deploy on Kubernetes](kubernetes)
