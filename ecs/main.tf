@@ -10,7 +10,8 @@ provider "aws" {
 # Base Infrastructure
 # ---------------------------------------------------------------------------------------------------------------------
 module "networking" {
-    source = "github.com/jnonino/networking-terraform-module//aws?ref=1.0.0-beta.1"
+    source = "github.com/jnonino/networking-terraform-module//aws?ref=1.0.0"
+    #source = "../../networking-terraform-module/aws"
     name_preffix    = "${var.name_preffix}"
     profile         = "${var.profile}"
     region          = "${var.region}"
@@ -24,7 +25,8 @@ module "networking" {
 # Jenkins
 # ---------------------------------------------------------------------------------------------------------------------
 module "jenkins" {
-	source = "github.com/jnonino/jenkins-terraform-module//aws?ref=1.0.0-beta.1"
+	source = "github.com/jnonino/jenkins-terraform-module//aws?ref=1.0.0"
+    #source = "../../jenkins-terraform-module/aws"
     name_preffix        = "${var.name_preffix}"
     profile             = "${var.profile}"
     region              = "${var.region}"
