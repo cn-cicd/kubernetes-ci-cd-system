@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: jenkins
-  namespace: ci-cd
+  namespace: cicd
   labels:
     component: jenkins
 spec:
@@ -22,6 +22,13 @@ spec:
         - name: jenkins
           image: jnonino/jenkins-master
           imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "1000m"
+            limits:
+              memory: "2048Mi"
+              cpu: "2000m"
           ports:
             - name: web
               containerPort: 8080

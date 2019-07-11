@@ -31,12 +31,12 @@ Docker official documentation: Deploy on Kubernetes.
 
 Enable Kubernetes Dashboard.
 
-    kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml
     kubectl proxy
 
 Dashboard accessible at:
 
-    http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+    http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
 
 ## Kubernetes Namespace ##
 
@@ -50,9 +50,9 @@ Jenkins is an open source automation server written in Java. Jenkins helps to au
 
 If using minikube. mount a local storage volume to persist Jenkins data:
 
-    mkdir -p /tmp/jenkins-pv-volume
-    chmod 777 /tmp/jenkins-pv-volume
-    minikube mount /tmp/jenkins-pv-volume:/data/jenkins-pv-volume
+    mkdir -p tmp/jenkins-pv-volume
+    chmod 777 tmp/jenkins-pv-volume
+    minikube mount tmp/jenkins-pv-volume:/data/jenkins-pv-volume
 
 To deploy Jenkins run these commands:
     
@@ -60,7 +60,7 @@ To deploy Jenkins run these commands:
 
 Start Jenkins UI:
 
-    minikube service jenkins -n ci-cd
+    minikube service jenkins -n cicd --url
 
 ## SonarQube ##
 

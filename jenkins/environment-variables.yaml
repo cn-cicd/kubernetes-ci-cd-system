@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: jenkins-env-variables
-  namespace: ci-cd
+  namespace: cicd
   labels:
     component: jenkins
 data:
