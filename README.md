@@ -1,5 +1,11 @@
 # CI-CD system on Kubernetes #
 
+[![](https://img.shields.io/github/license/jnonino/kubernetes-ci-cd-system)](https://github.com/jnonino/kubernetes-ci-cd-system)
+[![](https://img.shields.io/github/issues/jnonino/kubernetes-ci-cd-system)](https://github.com/jnonino/kubernetes-ci-cd-system)
+[![](https://img.shields.io/github/issues-closed/jnonino/kubernetes-ci-cd-system)](https://github.com/jnonino/kubernetes-ci-cd-system)
+[![](https://img.shields.io/github/languages/code-size/jnonino/kubernetes-ci-cd-system)](https://github.com/jnonino/kubernetes-ci-cd-system)
+[![](https://img.shields.io/github/repo-size/jnonino/kubernetes-ci-cd-system)](https://github.com/jnonino/kubernetes-ci-cd-system)
+
 Test Continuous Integration/Delivery environment on Kubernetes (minikube).
 
 ## Requirements ##
