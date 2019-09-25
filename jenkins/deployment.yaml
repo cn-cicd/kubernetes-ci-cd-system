@@ -20,7 +20,7 @@ spec:
             claimName: jenkins-pv-claim
       containers:
         - name: jenkins
-          image: jnonino/jenkins-master
+          image: cnservices/jenkins-master
           imagePullPolicy: IfNotPresent
           resources:
             requests:
